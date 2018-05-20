@@ -13,6 +13,7 @@ public class AnnotationDemoApp
 
         WushuCoach wushuCoach = context.getBean( "wushuCoach", WushuCoach.class );
         System.out.println( wushuCoach.getDailyWorkout() );
+        System.out.println( wushuCoach.getDailyFortune() );
 
         context.close();
     }
