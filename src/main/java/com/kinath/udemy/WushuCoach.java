@@ -9,4 +9,9 @@ public class WushuCoach implements Coach
     {
         return "Complete breathing exercises";
     }
+
+    public String getDailyFortune()
+    {
+        return null;
+    }
 }
