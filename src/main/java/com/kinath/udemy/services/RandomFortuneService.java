@@ -7,6 +7,6 @@ public class RandomFortuneService implements FortuneService
 {
     public String getFortune()
     {
-        return null;
+        return "Random Fortune";
     }
 }
