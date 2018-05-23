@@ -6,13 +6,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class CricketCoach implements Coach
 {
     @Autowired
     @Qualifier("cricketFortuneService")
     FortuneService fortuneService;
+
+    public CricketCoach()
+    {
+        System.out.println("CricketCoach : Inside no-arg constructor" + this.hashCode());
+    }
 
     public String getDailyWorkout()
     {
@@ -32,5 +40,17 @@ public class CricketCoach implements Coach
     public void setFortuneService( FortuneService fortuneService )
     {
         this.fortuneService = fortuneService;
+    }
+
+    @PostConstruct
+    public void doAfterConstruct()
+    {
+        System.out.println("CricketCoach : After Construction" + this.hashCode() );
+    }
+
+    @PreDestroy
+    public void doBeforeDestroy()
+    {
+        System.out.println("CricketCoach : Before Destroying " + this.hashCode() );
     }
 }
