@@ -6,8 +6,10 @@ import com.kinath.udemy.services.FortuneService;
 import com.kinath.udemy.services.SadFortuneService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource( "classpath:sport.properties" )
 public class SwimSportConfig
 {
     // Define bean for sad fortune service
